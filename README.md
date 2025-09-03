@@ -1,4 +1,3 @@
-#CIT 3606
-## Aidan Noftall
+# CIT 3606 Web Programming Labs & Projects
+## By: Aidan Noftall
 
-Change this readme text to your name and class
