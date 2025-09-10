@@ -7,19 +7,33 @@
     </head>
     <body>
         <script>
-            document.write("Hello World");
-        console.log("Hello World");
-        alert("Welcome to Lab 2");
-        name=prompt("Please enter your name");
-        if (name == "Aidan")
-        {
-            alert("Hello Aidan");
-        }
-        else
-        {
-            alert("Hello User");
-        }
-        </script>
-        <h1>CIT 3606 Lab 2 JavaScript Intro</h1>
+
+  var today = new Date();           
+  var hour = today.getHours();      
+
+  alert("Current hour is: " + hour);
+
+  if (hour < 12) {
+    alert("Good morning!");
+  } else if (hour >= 12 && hour < 18) {
+    alert("Good afternoon!");
+  } else {
+    alert("Good evening!");
+  }
+
+  let dollarAmount = window.prompt("Enter the amount in US Dollars:");
+
+            if (isNaN(dollarAmount)) {
+                window.alert("Invalid input, please enter a valid number.");
+            } 
+            else {
+                const exchangeRate = 147.40;
+                const yenAmount = dollarAmount * exchangeRate;
+                window.alert("$" + dollarAmount + " US Dollars is about ¥" + yenAmount + " in Japanese Yen.");
+            }
+
+</script>
+        <h1>CIT 3606 Lab 2 JavaScript Intro, Greeting, and Currency Converter from US Dollars to Japanese Yen</h1>
+        <h2><p>By: Aidan Noftall on 9/10/2025</p></h2>
     </body>
 </html>
