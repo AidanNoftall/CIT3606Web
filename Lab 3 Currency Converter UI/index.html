@@ -6,11 +6,31 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-      <!-- Add UI for Currency Converter -->
+        <!-- Title & Heading Start-->
+        <h1>Currency Converter:</h1>
+        <p></p>
+        <h2>US Dollars (USD) to Japanese Yen (JPY)</h2>
+        <p></p>
+         <!-- Title & Heading End -->
 
-      
-      <!-- The JavaScript code is attached at the bottom of the page
-           after the page is completely loaded. Write your code in script.js. -->
+        <!-- Input Fields Start -->
+        <div>
+             <div for="usdInput">US Dollars (USD):</div>
+            <input type="number" id="usdInput">
+        </div>
+        <div>
+            <div for="yenInput">Japanese Yen (JPY):</div>
+            <input type="number" id="yenInput">
+        </div>
+        <!-- Input Fields End -->
+
+        <div>
+        <button onclick="convertCurrency()">Convert</button> <!-- Will call the convertCurrency function in script.js -->
+        <button onclick="clearFields()">Clear</button> <!-- Will call the clearFields function in script.js -->
+        </div>
+
+        <!-- The JavaScript code is attached at the bottom of the page
+        after the page is completely loaded. Write your code in script.js. -->
       <script src="script.js"></script>
     </body>
 </html>
