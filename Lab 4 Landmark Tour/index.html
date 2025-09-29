@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width">
-        <title>CIT 3606 Lab 4</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-      
-      
-     <!-- The JavaScript code is attached at the bottom of the page
-           after the page is completely loaded. Write your code in script.js. -->
-     <script src="script.js"></script> 
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>CIT 3606 Lab 4</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <h1>Landmark Viewer By: Aidan Noftall</h1>
+    <P></P>
+    <h2>Please select a landmark to view its image, location on the map, and a brief description about it!</h2>
+
+    <div class="container">
+        <!--Radio Section Start-->
+        <div class="image-and-controls">
+            <img id="landmarkImage" src="Mount Rushmore.jpg" alt="Mount Rushmore" width="500">
+            <p>
+                <input type="radio" id="rushmoreRadio" name="landmark" value="rushmore" checked onclick="changeLandmark('rushmore')">
+                <label for="rushmoreRadio">Mount Rushmore</label><br>
+
+                <input type="radio" id="ColosseumRadio" name="landmark" value="Colosseum" onclick="changeLandmark('Colosseum')">
+                <label for="ColosseumRadio">Colosseum</label><br>
+                
+                <input type="radio" id="easterIslandRadio" name="landmark" value="easterIsland" onclick="changeLandmark('easterIsland')">
+                <label for="easterIslandRadio">Easter Island Statue</label><br>
+            </p>
+            <!--Radio Section End-->
+
+            <!-- Changing Image Sizes Start -->
+            <p>
+                Change Image Size:
+                <select id="sizeSelect" onchange="changeSize()">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </p>
+        </div>
+        <!-- Changing Image Sizes End -->
+
+        <!-- Map and Description Section Start -->
+        <div class="map-and-description">
+            <iframe id="mapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1558.756194200147!2d-103.45330386760634!3d43.879109395270116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x877d174783307525%3A0x6a20d5dfc674251!2sMount%20Rushmore%20National%20Memorial!5e0!3m2!1sen!2sus!4v1700684693339!5m2!1sen!2sus" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div id="description">
+                Mount Rushmore is a very large scale sculpture that is carved into Mount Rushmore in the Black Hills region of South Dakota. It is a very cool spot to visit!
+            </div>
+        </div>
+        <!-- Map and Description Section End -->
+    </div>
+    <script src="script.js"></script> 
+</body>
 </html>
