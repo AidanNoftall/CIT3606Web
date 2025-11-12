@@ -1,9 +1,11 @@
+//Import necessary modules and components start
 import './App.css';
 import React, { useState, useEffect } from 'react';
+//Import necessary modules and components end
 
+//Pokemon function component start
 function Pokemon(props) {
   const { name, type, imageUrl } = props;
-
   const src = imageUrl || "error.png";
 
   return (
@@ -19,7 +21,9 @@ function Pokemon(props) {
     </div>
   );
 }
+//Pokemon function component end
 
+//Search function component start
 function Search() {
   const [nameInput, setNameInput] = useState('mew'); 
   const [pokemonName, setPokemonName] = useState(''); 
@@ -30,13 +34,11 @@ function Search() {
   const fetchPokemon = async (queryNameOverride) => {
     const queryName = (queryNameOverride || nameInput).toLowerCase().trim();
     if (!queryName) return;
-
     setLoadingStatus('loading');
     setPokemonName('Loading...');
 
     try {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${queryName}`);
-
       if (!response.ok) {
         setLoadingStatus('error');
         setPokemonName('Not Found');
@@ -46,7 +48,6 @@ function Search() {
       }
 
       const data = await response.json();
-
       setPokemonName(data.name);
       setPokemonType(data.types[0].type.name);
       setPokemonImageUrl(data.sprites.other['official-artwork'].front_default);
@@ -59,7 +60,9 @@ function Search() {
       setPokemonImageUrl('');
     }
   };
+//Search function component end
 
+//Event handlers and renders start
   const handleChange = (event) => {
     setNameInput(event.target.value);
   };
@@ -97,29 +100,28 @@ function Search() {
     <div className="search-container">
       <h2 className="search-header">Search Any Pokemon</h2>
       
-      <div className="search-controls">
-        {}
+      <div className="search-controls">{}
         <input
           type="text"
           value={nameInput}
           onChange={handleChange}
           placeholder="Enter Pokemon Name"
           className="search-input"
-        />
-        {}
+        />{}
+        
         <button
           onClick={handleClick}
-          className="search-button"
-        >
+          className="search-button">
           Get Info
         </button>
-      </div>
-      {}
+      </div>{}
       {renderSearchResult()}
     </div>
   );
 }
+//Event handlers and renders end
 
+//Main App function start
 function App() {
   return (
     <div className="app-container">
@@ -129,11 +131,9 @@ function App() {
         </h1>
       </header>
       <Search />
-      
       <div className="list-container">
         <h2 className="list-header">My Favorite Pokemon List</h2>
-        <div className="pokemon-list">
-          {}
+        <div className="pokemon-list">{}
           <Pokemon name="Gastly" type="Ghost" imageUrl="gastly.png" />
           <Pokemon name="Magikarp" type="Water" imageUrl="magikarp.jpg" />
           <Pokemon name="Meowth" type="Normal" imageUrl="meowth.png" />
@@ -143,4 +143,8 @@ function App() {
     </div>
   );
 }
+//Main App function end
+
+//Export App component end
 export default App;
+//Export App component end
